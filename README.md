@@ -1,7 +1,5 @@
 # ctxpack
 
-[Português](docs/README.pt-BR.md) | [Español](docs/README.es.md) | [Deutsch](docs/README.de.md) | [Français](docs/README.fr.md) | [日本語](docs/README.ja.md)
-
 One Python file that turns a project into a single markdown file you can paste into Claude, Gemini or ChatGPT. Nothing to install, no dependencies, Python 3.8 or newer.
 
 ```
@@ -13,6 +11,12 @@ heaviest files:
 wrote context_prompt.md
 copied to clipboard
 ```
+
+## Why
+
+Copying files one by one into a web chat is slow, and an agent or an IDE plugin is a lot of setup when you only want to ask about your code. This is the smallest thing I could make that solves that: one file you can read in a few minutes.
+
+If you want more output formats, use Repomix or code2prompt. They do more. ctxpack stays small on purpose.
 
 ## Get it
 
@@ -80,6 +84,12 @@ The count is an estimate, good to about 20% on Python and JS/TS code. That's eno
 ## Clipboard
 
 Windows uses `clip`, macOS uses `pbcopy`, Linux uses `wl-copy`, `xclip` or `xsel`, and Termux and WSL work too. If none is available the file is still written.
+
+## Known limits
+
+- The `.gitignore` matching is hand written, because of the no dependencies rule. It matched real `git` on 300 random repos, but tell me if a pattern comes out wrong.
+- It targets Python 3.8, but I've only run it on 3.12 on Windows. macOS and Linux reports are welcome.
+- The secret check is a safety net, not a guarantee.
 
 ## Tests
 
